@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+:root {
+    --colorA: #343434;
+    --colorB: #767676;
+    --colorC: #77aaff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+}
