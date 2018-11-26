@@ -22,7 +22,6 @@ body {
     width: 100vw;
     background: var(--colorC);
     padding-top: 10px;
-    /* border-bottom: 3px solid var(--colorB); */
 }
 
 #title {
@@ -36,12 +35,6 @@ body {
     user-select: none;
 }
 
-#action-bar {
-    background: var(--colorC);
-    border-bottom: 2px solid var(--colorB);
-    padding-left: 1rem;
-}
-
 .btn {
     cursor: pointer;
     outline: none;
@@ -49,14 +42,16 @@ body {
     background: none;
     font-size: 1.8rem;
     font-weight: 900;
-    margin: 5px;
 }
 
 .btn-add {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
     border: none;
     border-radius: 50%;
-    color: var(--colorA);
-    background: var(--colorD);
+    color: var(--colorD);
+    background: var(--colorC);
     width: 40px;
     height: 40px;
     transition: ease 0.3s;
@@ -65,5 +60,5 @@ body {
 .btn-add:hover {
     background: var(--colorA);
     color: var(--colorD);
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.2);
 }
