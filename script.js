@@ -124,9 +124,11 @@ function createListElement(taskID, task) {
     listElement.setAttribute('id', 'task-'+taskID);
 
     const taskElement = createTask(task);
+    const doneBtn = createDoneBtn();
     const deleteBtn = createDeleteBtn();
 
     listElement.append(taskElement);
+    listElement.append(doneBtn);
     listElement.append(deleteBtn);
 
     console.log(listElement);
@@ -152,11 +154,22 @@ function createTask(task) {
     return wrapperDiv;
 }
 
+function createDoneBtn() {
+    const wrapperDiv = document.createElement('div');
+
+    const doneBtn = document.createElement('i');
+    doneBtn.classList.add('fas', 'fa-check');
+
+    wrapperDiv.append(doneBtn);
+
+    return wrapperDiv;
+}
+
 function createDeleteBtn() {
     const wrapperDiv = document.createElement('div');
 
     const deleteBtn = document.createElement('i');
-    deleteBtn.innerText = 'X';
+    deleteBtn.classList.add('fas', 'fa-times');
 
     wrapperDiv.append(deleteBtn);
 
