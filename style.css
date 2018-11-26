@@ -16,19 +16,54 @@ body {
     font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* mobile */
+/* --------------------------------------------------------- */
 
 #hdr {
     width: 100vw;
     background: var(--colorC);
-    border-bottom: 3px solid var(--colorB);
+    padding-top: 10px;
+    /* border-bottom: 3px solid var(--colorB); */
 }
 
 #title {
     text-align: center;
+    text-transform: lowercase;
     color: var(--colorD);
+    font-style: italic;
     font-weight: 300;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     letter-spacing: 2px;
     user-select: none;
+}
+
+#action-bar {
+    background: var(--colorC);
+    border-bottom: 2px solid var(--colorB);
+    padding-left: 1rem;
+}
+
+.btn {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    background: none;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 5px;
+}
+
+.btn-add {
+    border: none;
+    border-radius: 50%;
+    color: var(--colorA);
+    background: var(--colorD);
+    width: 40px;
+    height: 40px;
+    transition: ease 0.3s;
+}
+
+.btn-add:hover {
+    background: var(--colorA);
+    color: var(--colorD);
+    transform: rotate(360deg);
 }
