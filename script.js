@@ -1,5 +1,7 @@
 'use strict';
 
+var currentTaskID = 1;
+
 window.onload = startAction;
 
 function startAction() {
@@ -14,7 +16,7 @@ function setEvents() {
 
 function addBtnClick() {
     console.log('Add button clicked');
-    
+
     const addBtn = document.querySelector('.btn-add');
     addBtn.style.display = "none";
 
@@ -104,8 +106,6 @@ function storeTask(task) {
     }
 }
 
-var currentTaskID = 1;
-
 function addTaskToList(task) {
     // console.log(`Task is: ${task.task}`);
     const list = document.querySelector('#list');
@@ -189,7 +189,6 @@ function createDeleteBtn() {
 
     return wrapperDiv;
 }
-
 
 function taskNameClick(event) {
     console.log('Taskname clicked');
