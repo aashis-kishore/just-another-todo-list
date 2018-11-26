@@ -93,13 +93,11 @@ function getFormFieldValues() {
         description: descriptionField.value
     };
 
-    console.log(formValues);
-
     return formValues;
 }
 
 function storeTask(task) {
-    console.log(`task is: ${task}`);
+    // console.log(`task is: ${task}`);
     if(typeof(Storage) !== "undefined") {
         console.log('Local storage supported');
         // localStorage.setItem('');
@@ -109,10 +107,8 @@ function storeTask(task) {
 var currentTaskID = 1;
 
 function addTaskToList(task) {
-    console.log(`Task is: ${task.task}`);
-
+    // console.log(`Task is: ${task.task}`);
     const list = document.querySelector('#list');
-    console.log(list);
 
     const taskElement = createListElement(currentTaskID, task);
     currentTaskID += 1;
@@ -139,8 +135,6 @@ function createListElement(taskID, task) {
         const descriptionElement = createDescription(task.description);
         listElement.append(descriptionElement);
     }
-    
-    console.log(listElement);
 
     return listElement;
 }
