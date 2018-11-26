@@ -116,7 +116,7 @@ function addTaskToList(task) {
 
     list.append(taskElement);
 
-    return currentTaskID;
+    return 'task-'+currentTaskID;
 }
 
 function createListElement(taskID, task) {
