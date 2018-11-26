@@ -5,11 +5,13 @@
     --colorB: #767676;
     --colorC: #77aaff;
     --colorD: #fff;
+    --colorE: #ff0000;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border;
 }
 
 body {
@@ -41,7 +43,6 @@ body {
     user-select: none;
     background: none;
     font-size: 1.8rem;
-    font-weight: 900;
 }
 
 .btn-add {
@@ -49,6 +50,7 @@ body {
     bottom: 10px;
     right: 10px;
     border: none;
+    font-weight: 900;
     border-radius: 50%;
     color: var(--colorD);
     background: var(--colorC);
@@ -61,4 +63,113 @@ body {
     background: var(--colorA);
     color: var(--colorD);
     transform: rotate(360deg) scale(1.2);
+}
+
+@keyframes view-add-item-form {
+    from {
+        background: rgba(255, 255, 255, 1);
+    }
+    to {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+.form-container {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50vh;
+    z-index: 1;
+    /* background: rgba(255, 255, 255, 0.95); */
+    padding: 2rem 1rem;
+}
+
+.btn-add-active {
+    display: block;
+    animation: view-add-item-form ease 0.3s;
+    background: rgba(255, 255, 255, 0.95);
+    background: black;
+}
+
+.btn-close-container {
+    text-align: right;
+}
+
+.btn-close {
+    display: inline-block;
+    font-style: normal;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    vertical-align: middle;
+    color: var(--colorB);
+    transition: ease 0.3s;
+}
+
+.btn-close:hover {
+    color: var(--colorE);
+    background: var(--colorD);
+    transform: scale(1.2);
+}
+
+.form-container h2 {
+    user-select: none;
+    color: var(--colorA);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0.4rem 0 2rem 0;
+}
+
+.form-container form {
+    width: 100%;
+    height: 85%;
+}
+
+.form-container form div {
+    margin: 2.5rem auto;
+}
+
+.form-container label {
+    user-select: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--colorB);
+}
+
+#task, #task-description {
+    display: block;
+    outline-color: var(--colorC);
+    border: none;
+    width: 90%;
+    font-size: 1.2rem;
+    height: 30px;
+    color: var(--colorA);
+    background: #f1f1f1;
+    margin: 0.3rem auto;
+    padding: 0.3rem 0.5rem;
+}
+
+#task-description {
+    height: 7rem;
+    resize: none;
+}
+
+.btn-submit {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    color: var(--colorD);
+    background: var(--colorC);
+    transition: ease 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--colorA);
+    color: var(--colorD);
+    transform: scale(1.2);
 }
