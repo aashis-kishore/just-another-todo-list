@@ -124,13 +124,19 @@ function createListElement(taskID, task) {
     listElement.setAttribute('id', 'task-'+taskID);
 
     const taskElement = createTask(task);
-    const doneBtn = createDoneBtn();
-    const deleteBtn = createDeleteBtn();
-
     listElement.append(taskElement);
+     
+    const doneBtn = createDoneBtn();
     listElement.append(doneBtn);
+
+    const deleteBtn = createDeleteBtn();
     listElement.append(deleteBtn);
 
+    if(task.description !== "") {
+        const descriptionElement = createDescription(task.description);
+        listElement.append(descriptionElement);
+    }
+    
     console.log(listElement);
 
     return listElement;
@@ -145,11 +151,19 @@ function createTask(task) {
     wrapperDiv.append(taskName);
 
     if(task.description !== "") {
-        const descriptionElement = document.createElement('p');
-        descriptionElement.innerText = task.description;
-
-        wrapperDiv.append(descriptionElement);
+        wrapperDiv.classList.add('has-description');
     }
+
+    return wrapperDiv;
+}
+
+function createDescription(description) {
+    const wrapperDiv = document.createElement('div');
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.innerText = description;
+
+    wrapperDiv.append(descriptionElement);
 
     return wrapperDiv;
 }
