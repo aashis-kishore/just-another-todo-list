@@ -67,10 +67,10 @@ body {
 
 @keyframes view-add-item-form {
     from {
-        background: rgba(255, 255, 255, 1);
+        background: rgba(0, 0, 0, 0);
     }
     to {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(119, 170, 255, 0.95);
     }
 }
 
@@ -89,8 +89,7 @@ body {
 .btn-add-active {
     display: block;
     animation: view-add-item-form ease 0.3s;
-    background: rgba(255, 255, 255, 0.95);
-    background: black;
+    background: rgba(119, 170, 255, 0.95);
 }
 
 .btn-close-container {
@@ -105,7 +104,7 @@ body {
     text-align: center;
     padding: 0.5rem 0.5rem 0.3rem 0.5rem;
     vertical-align: middle;
-    color: var(--colorB);
+    color: var(--colorD);
     transition: ease 0.3s;
 }
 
@@ -164,7 +163,7 @@ body {
     font-weight: 300;
     padding: 0.5rem 1rem;
     color: var(--colorD);
-    background: var(--colorC);
+    background: var(--colorB);
     transition: ease 0.3s;
 }
 
