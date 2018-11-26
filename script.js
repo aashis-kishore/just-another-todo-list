@@ -12,10 +12,11 @@ function setEvents() {
     document.querySelector('.btn-submit').addEventListener('click', submitBtnClick);
 }
 
-function addBtnClick(event) {
+function addBtnClick() {
     console.log('Add button clicked');
     
-    event.target.style.display = "none";
+    const addBtn = document.querySelector('.btn-add');
+    addBtn.style.display = "none";
 
     const header = document.body.children[0];
     const main = document.body.children[3];
