@@ -151,6 +151,7 @@ function createTask(task) {
     wrapperDiv.append(taskName);
 
     if(task.description !== "") {
+        wrapperDiv.addEventListener('click', taskNameClick);
         wrapperDiv.classList.add('has-description');
     }
 
@@ -172,6 +173,7 @@ function createDoneBtn() {
     const wrapperDiv = document.createElement('div');
 
     const doneBtn = document.createElement('i');
+    doneBtn.addEventListener('click', doneBtnClick);
     doneBtn.classList.add('fas', 'fa-check');
 
     wrapperDiv.append(doneBtn);
@@ -183,9 +185,33 @@ function createDeleteBtn() {
     const wrapperDiv = document.createElement('div');
 
     const deleteBtn = document.createElement('i');
+    deleteBtn.addEventListener('click', deleteBtnClick);
     deleteBtn.classList.add('fas', 'fa-times');
 
     wrapperDiv.append(deleteBtn);
 
     return wrapperDiv;
+}
+
+
+function taskNameClick(event) {
+    console.log('Taskname clicked');
+
+    // Nasty but simple way to pick the right description
+    const description = event.target.parentNode.parentNode.children[3].children[0];
+    description.classList.toggle('description-active');
+}
+
+function doneBtnClick(event) {
+    console.log('Done button clicked');
+
+    event.target.classList.toggle('task-done');
+}
+
+function deleteBtnClick(event) {
+    console.log('Delete button clicked');
+
+    const item = event.target.parentNode.parentNode;
+
+    item.remove();
 }

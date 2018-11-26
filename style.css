@@ -51,8 +51,8 @@ body {
 
 .btn-add {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 30px;
+    right: 40px;
     border: none;
     font-weight: 900;
     border-radius: 50%;
@@ -209,6 +209,7 @@ li div:nth-child(3) {
 
 li h3 {
     user-select: none;
+    color: var(--colorA);
     font-size: 2rem;
     font-weight: 500; 
 }
@@ -218,12 +219,18 @@ li h3 {
 }
 
 li p {
-    /* visibility: visible; */
+    display: none;
     user-select: none;
+    color: var(--colorB);
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin-top: 0.5rem; 
+    margin: 0.5rem 0;
+    transition: 1s; 
+}
+
+.description-active {
+    display: block;
 }
 
 .fa-check, .fa-times {
@@ -240,4 +247,8 @@ li p {
 
 .fa-times:hover {
     color: var(--colorE);
+}
+
+.task-done {
+    color: var(--colorF);
 }
