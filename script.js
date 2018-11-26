@@ -20,10 +20,12 @@ function addBtnClick(event) {
     const header = document.body.children[0];
     const main = document.body.children[3];
     const formContainer = document.querySelector('.form-container');
+    const taskField = document.querySelector('#task-field');
 
     header.style.opacity = 0.5;
     main.style.opacity = 0.5;
     formContainer.classList.toggle('btn-add-active');
+    taskField.focus();
 }
 
 function closeBtnClick() {
