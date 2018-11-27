@@ -202,6 +202,15 @@ function doneBtnClick(event) {
     console.log('Done button clicked');
 
     event.target.classList.toggle('task-done');
+
+    const list = document.querySelector('#list');
+    const listItem = event.target.parentNode.parentNode;
+
+    if(event.target.classList.contains('task-done')) {
+        list.append(listItem);
+    } else {
+        list.prepend(listItem);
+    }
 }
 
 function deleteBtnClick(event) {
