@@ -21,8 +21,7 @@ body {
 
 /* --------------------------------------------------------- */
 
-@media all and (min-height: 300px) {
-    
+@media all and (min-height: 0) {
     #hdr {
         position: fixed;
         top: 0;
@@ -106,6 +105,7 @@ body {
     }
 
     .form-container h2 {
+        display: none;
         user-select: none;
         color: var(--colorA);
         font-size: 1.6rem;
@@ -234,6 +234,7 @@ body {
     }
 
     .form-container h2 {
+        display: block;
         font-size: 1.8rem;
         margin: 0.2rem 0 0 0;
     }
