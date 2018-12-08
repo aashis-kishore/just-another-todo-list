@@ -118,7 +118,6 @@ body.disable-scroll {
 #task-container>label,
 #description-container>label {
     color: var(--colorA);
-    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -175,11 +174,20 @@ body.disable-scroll {
 
 #container {
     margin: 0 10px;
+    user-select: none;
 }
 
-#list > li {
+#list {
+    list-style: none;
+}
+
+#list>li {
+    margin-bottom: 2rem;
+    /* border-bottom: 1px solid var(--colorB); */
+}
+
+#list>li:last-child {
     margin-bottom: 1rem;
-    border-bottom: 1px solid var(--colorB);
 }
 
 .task-name {
@@ -233,6 +241,51 @@ body.disable-scroll {
 .task-description.description-active {
     display: block;
 }
+
+@media screen and (min-width: 768px) {
+    .form-container {
+        padding: 10% 5rem;
+    }
+
+    .form-container>form>div {
+        margin: 40px 0;
+    }
+
+    #task-field {
+        height: 3rem;
+        margin-top: 1rem;
+    }
+
+    #description-field {
+        height: 7rem;
+        margin-top: 1rem;
+    }
+
+    #container {
+        margin: 0 4.3rem;
+    }
+}
+
+@media screen and (min-width: 1028px) {
+    .form-container {
+        padding: 10% 15rem;
+    }
+
+    #container {
+        margin: 0 6rem;
+    }
+
+    #description-field {
+        height: 10rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #container {
+        margin: 0 15rem;
+    }
+} 
 
 /* @media all and (min-height: 0) {
     #hdr {
