@@ -179,6 +179,59 @@ body.disable-scroll {
 
 #list > li {
     margin-bottom: 1rem;
+    border-bottom: 1px solid var(--colorB);
+}
+
+.task-name {
+    display: inline-block;
+    width: 80%;
+    font-size: 1.2rem;
+    color: var(--colorA);
+    letter-spacing: 2px;
+}
+
+.done-btn-container {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+}
+
+.fa-check {
+    color: var(--colorB);
+}
+
+.fa-check:hover {
+    color: var(--colorF);
+}
+
+.task-done {
+    color: var(--colorF);
+}
+
+.delete-btn-container {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+}
+
+.fa-times {
+    color: var(--colorB);
+}
+
+.fa-times:hover {
+    color: var(--colorE);
+}
+
+.task-description {
+    display: none;
+    font-size: 1.2rem;
+    color: var(--colorB);
+    font-style: oblique;
+    padding: 3px 8px;
+}
+
+.task-description.description-active {
+    display: block;
 }
 
 /* @media all and (min-height: 0) {

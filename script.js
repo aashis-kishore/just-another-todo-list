@@ -34,17 +34,6 @@ function addBtnClick() {
     taskField.focus();
 }
 
-function toggleScroll() {
-    if (document.body.classList.contains('disable-scroll')) {
-        document.body.classList.remove('disable-scroll');
-        window.scrollTo(0, currentPageYoffset);
-    } else {
-        document.body.classList.add('disable-scroll');
-        currentPageYoffset = window.pageYOffset;
-        window.scrollTo(0, 0);
-    }
-}
-
 function closeBtnClick() {
     console.log('Close button clicked');
 
@@ -63,6 +52,17 @@ function closeBtnClick() {
     main.style.opacity = 1;
 
     clearFormFields();
+}
+
+function toggleScroll() {
+    if (document.body.classList.contains('disable-scroll')) {
+        document.body.classList.remove('disable-scroll');
+        window.scrollTo(0, currentPageYoffset);
+    } else {
+        document.body.classList.add('disable-scroll');
+        currentPageYoffset = window.pageYOffset;
+        window.scrollTo(0, 0);
+    }
 }
 
 function clearFormFields() {
@@ -157,6 +157,7 @@ function createListElement(taskID, task) {
 
 function createTask(task) {
     const wrapperDiv = document.createElement('div');
+    wrapperDiv.classList.add('task-name');
 
     const taskName = document.createElement('h3');
     taskName.innerText = task.task;
@@ -173,6 +174,7 @@ function createTask(task) {
 
 function createDescription(description) {
     const wrapperDiv = document.createElement('div');
+    wrapperDiv.classList.add('task-description');
 
     const descriptionElement = document.createElement('p');
     descriptionElement.innerText = description;
@@ -184,6 +186,7 @@ function createDescription(description) {
 
 function createDoneBtn() {
     const wrapperDiv = document.createElement('div');
+    wrapperDiv.classList.add('done-btn-container');
 
     const doneBtn = document.createElement('i');
     doneBtn.addEventListener('click', doneBtnClick);
@@ -196,6 +199,7 @@ function createDoneBtn() {
 
 function createDeleteBtn() {
     const wrapperDiv = document.createElement('div');
+    wrapperDiv.classList.add('delete-btn-container');
 
     const deleteBtn = document.createElement('i');
     deleteBtn.addEventListener('click', deleteBtnClick);
@@ -210,7 +214,7 @@ function taskNameClick(event) {
     console.log('Taskname clicked');
 
     // Nasty but simple way to pick the right description
-    const description = event.target.parentNode.parentNode.children[3].children[0];
+    const description = event.target.parentNode.parentNode.children[3];
     description.classList.toggle('description-active');
 }
 
