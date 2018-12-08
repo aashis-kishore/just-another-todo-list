@@ -1,6 +1,7 @@
 'use strict';
 
 var currentTaskID = 1;
+var currentPageYoffset = 200;
 
 window.onload = startAction;
 
@@ -17,6 +18,8 @@ function setEvents() {
 function addBtnClick() {
     console.log('Add button clicked');
 
+    toggleScroll();
+
     const addBtn = document.querySelector('.btn-add');
     addBtn.style.display = "none";
 
@@ -25,14 +28,27 @@ function addBtnClick() {
     const formContainer = document.querySelector('.form-container');
     const taskField = document.querySelector('#task-field');
 
-    header.style.opacity = 0.5;
-    main.style.opacity = 0.5;
+    // header.style.opacity = 0.5;
+    // main.style.opacity = 0.5;
     formContainer.classList.toggle('btn-add-active');
     taskField.focus();
 }
 
+function toggleScroll() {
+    if (document.body.classList.contains('disable-scroll')) {
+        document.body.classList.remove('disable-scroll');
+        window.scrollTo(0, currentPageYoffset);
+    } else {
+        document.body.classList.add('disable-scroll');
+        currentPageYoffset = window.pageYOffset;
+        window.scrollTo(0, 0);
+    }
+}
+
 function closeBtnClick() {
     console.log('Close button clicked');
+
+    toggleScroll();
 
     const formContainer = document.querySelector('.form-container');
     formContainer.classList.toggle('btn-add-active');

@@ -12,24 +12,24 @@
     <header id="hdr">
         <h1 id="title">Todo</h1>
     </header>
-    <button class="fas fa-plus btn btn-add "></button>
+    <button class="fas fa-plus btn btn-add"></button>
     <div class="form-container">
         <div>
             <div class="btn-close-container">
-                <i class="fas fa-times btn btn-close"></i>
+                <i class="fas fa-times fa-lg btn btn-close"></i>
             </div>
             <h2>add new task</h2>
         </div>
         <form>
-            <div>
+            <div id="task-container">
                 <label for="task-field">Name</label></br>
-                <input type="text" name="task" id="task-field" placeholder="Enter task name" autofocus>
+                <input type="text" name="task" id="task-field" placeholder="task name" autofocus>
             </div>
-            <div>
+            <div id="description-container">
                 <label for="description-field">Description</label></br>
-                <textarea name="description" id="description-field" placeholder="(Optional) Enter task description"></textarea>
+                <textarea name="description" id="description-field" placeholder="(optional) task description"></textarea>
             </div>
-            <div>
+            <div class="btn-submit-container">
                 <button class="btn btn-submit">add</button>
             </div>
         </form>

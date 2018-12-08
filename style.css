@@ -3,8 +3,8 @@
 :root {
     --colorA: #343434;
     --colorB: #767676;
-    --colorC: #77aaff;
-    --colorD: #fff;
+    --colorC: #fff;
+    --colorD: #77aaff;
     --colorE: #ff0000;
     --colorF: #00ff00;
 }
@@ -12,16 +12,176 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body.disable-scroll {
+    overflow: hidden;
+}
+
 /* --------------------------------------------------------- */
 
-@media all and (min-height: 0) {
+
+#hdr {
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+#hdr>h1 {
+    display: inline-block;
+    user-select: none;
+    text-transform: lowercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-style: oblique;
+    border-bottom: 1px solid;
+    color: var(--colorA);
+}
+
+.btn {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    border: none;
+}
+
+.btn-add {
+    z-index: 2;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--colorC);
+    background: var(--colorA);
+    transition: ease 0.3s;
+}
+
+.btn-add:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.form-container {
+    z-index: 1;
+    display: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 10% 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-container.btn-add-active {
+    display: block;
+}
+
+.btn-close-container {
+    text-align: right;
+}
+
+.btn-close {
+    cursor: pointer;
+    padding: 8px 5px;
+    color: var(--colorB);
+    transition: ease 0.3s;
+    margin: 10px 20px 0 0;
+}
+
+.btn-close:hover {
+    color: var(--colorC);
+    background: var(--colorA);
+    transform: scale(1.2);
+}
+
+.form-container h2 {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.form-container>form>div {
+    margin: 20px 0;
+}
+
+#task-container>label,
+#description-container>label {
+    color: var(--colorA);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+#task-field {
+    color: var(--colorB);
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    width: 80%;
+    outline: none;
+    border: none;
+    transition: ease 0.3s;
+}
+
+#task-field:focus {
+    color: var(--colorC);
+    background: var(--colorB);
+}
+
+#description-field {
+    color: var(--colorB);
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    height: 5rem;
+    width: 80%;
+    resize: none;
+    outline: none;
+    border: none;
+    transition: ease 0.3s;
+}
+
+#description-field:focus {
+    color: var(--colorC);
+    background: var(--colorB);
+}
+
+.btn-submit {
+    letter-spacing: 2px;
+    color: var(--colorC);
+    width: 100px;
+    height: 40px;
+    font-size: 1.2rem;
+    transition: ease 0.3s;
+    background: var(--colorB);
+}
+
+.btn-submit:hover {
+    background: var(--colorA);
+    color: var(--colorC);
+    transform: scale(1.2);
+}
+
+#container {
+    margin: 0 10px;
+}
+
+#list > li {
+    margin-bottom: 1rem;
+}
+
+/* @media all and (min-height: 0) {
     #hdr {
         position: fixed;
         top: 0;
@@ -476,4 +636,4 @@ body {
         margin: 3rem auto auto auto;
         padding: 0.5rem 2rem;
     }
-}
+} */
